@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Convertisseur d'unités</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  </head>
+  <body class="bg-gray-100 min-h-screen flex flex-col items-center p-4">
+    <div class="w-full max-w-xl bg-white rounded shadow p-6 mt-8">
+      <h1 class="text-2xl font-bold mb-6 text-center">Convertisseur d'unités</h1>
+   
+      <form id="length-converter" class="flex flex-col gap-4 mb-8">
+        <div class="flex gap-2 items-end">
+          <input type="number" id="length-value" class="border p-2 rounded w-32" placeholder="Valeur" required />
+          <select id="length-from" class="border p-2 rounded">
+            <option value="meter">Mètre</option>
+            <option value="kilometer">Kilomètre</option>
+            <option value="foot">Pied</option>
+            <option value="inch">Pouce</option>
+            <option value="yard">Yard</option>
+            <option value="mile">Mile</option>
+          </select>
+          <span class="mx-2">→</span>
+          <select id="length-to" class="border p-2 rounded">
+            <option value="meter">Mètre</option>
+            <option value="kilometer">Kilomètre</option>
+            <option value="foot">Pied</option>
+            <option value="inch">Pouce</option>
+            <option value="yard">Yard</option>
+            <option value="mile">Mile</option>
+          </select>
+          <button type="submit" class="ml-4 bg-blue-500 text-white px-4 py-2 rounded">Convertir</button>
+        </div>
+        <div id="length-result" class="text-lg font-semibold text-green-600"></div>
+        <button id="add-favorite" type="button" class="bg-yellow-400 text-white px-3 py-1 rounded self-start">Ajouter aux favoris</button>
+      </form>
+
+      <form id="temp-converter" class="flex flex-col gap-4 mb-8">
+        <div class="flex gap-2 items-end">
+          <input type="number" id="temp-value" class="border p-2 rounded w-32" placeholder="Valeur" required />
+          <select id="temp-from" class="border p-2 rounded">
+            <option value="celsius">Celsius (°C)</option>
+            <option value="fahrenheit">Fahrenheit (°F)</option>
+            <option value="kelvin">Kelvin (K)</option>
+          </select>
+          <span class="mx-2">→</span>
+          <select id="temp-to" class="border p-2 rounded">
+            <option value="celsius">Celsius (°C)</option>
+            <option value="fahrenheit">Fahrenheit (°F)</option>
+            <option value="kelvin">Kelvin (K)</option>
+          </select>
+          <button type="submit" class="ml-4 bg-blue-500 text-white px-4 py-2 rounded">Convertir</button>
+        </div>
+        <div id="temp-result" class="text-lg font-semibold text-green-600"></div>
+        <button id="add-favorite-temp" type="button" class="bg-yellow-400 text-white px-3 py-1 rounded self-start">Ajouter aux favoris</button>
+      </form>
+    
+      <form id="weight-converter" class="flex flex-col gap-4 mb-8">
+        <div class="flex gap-2 items-end">
+          <input type="number" id="weight-value" class="border p-2 rounded w-32" placeholder="Valeur" required />
+          <select id="weight-from" class="border p-2 rounded">
+            <option value="gram">Gramme (g)</option>
+            <option value="kilogram">Kilogramme (kg)</option>
+            <option value="pound">Livre (lb)</option>
+          </select>
+          <span class="mx-2">→</span>
+          <select id="weight-to" class="border p-2 rounded">
+            <option value="gram">Gramme (g)</option>
+            <option value="kilogram">Kilogramme (kg)</option>
+            <option value="pound">Livre (lb)</option>
+          </select>
+          <button type="submit" class="ml-4 bg-blue-500 text-white px-4 py-2 rounded">Convertir</button>
+        </div>
+        <div id="weight-result" class="text-lg font-semibold text-green-600"></div>
+        <button id="add-favorite-weight" type="button" class="bg-yellow-400 text-white px-3 py-1 rounded self-start">Ajouter aux favoris</button>
+      </form>
+      
+      <form id="volume-converter" class="flex flex-col gap-4 mb-8">
+        <div class="flex gap-2 items-end">
+          <input type="number" id="volume-value" class="border p-2 rounded w-32" placeholder="Valeur" required />
+          <select id="volume-from" class="border p-2 rounded">
+            <option value="liter">Litre (L)</option>
+            <option value="gallon">Gallon (gal)</option>
+          </select>
+          <span class="mx-2">→</span>
+          <select id="volume-to" class="border p-2 rounded">
+            <option value="liter">Litre (L)</option>
+            <option value="gallon">Gallon (gal)</option>
+          </select>
+          <button type="submit" class="ml-4 bg-blue-500 text-white px-4 py-2 rounded">Convertir</button>
+        </div>
+        <div id="volume-result" class="text-lg font-semibold text-green-600"></div>
+        <button id="add-favorite-volume" type="button" class="bg-yellow-400 text-white px-3 py-1 rounded self-start">Ajouter aux favoris</button>
+      </form>
+      
+      <form id="currency-converter" class="flex flex-col gap-4 mb-8">
+        <div class="flex gap-2 items-end">
+          <input type="number" id="currency-value" class="border p-2 rounded w-32" placeholder="Valeur" required />
+          <select id="currency-from" class="border p-2 rounded"></select>
+          <span class="mx-2">→</span>
+          <select id="currency-to" class="border p-2 rounded"></select>
+          <button type="submit" class="ml-4 bg-blue-500 text-white px-4 py-2 rounded">Convertir</button>
+        </div>
+        <div id="currency-result" class="text-lg font-semibold text-green-600"></div>
+        <button id="add-favorite-currency" type="button" class="bg-yellow-400 text-white px-3 py-1 rounded self-start">Ajouter aux favoris</button>
+      </form>
+    
+      <div class="mb-8">
+        <h2 class="text-xl font-semibold mb-2">Favoris</h2>
+        <ul id="favorites-list" class="list-disc pl-5 space-y-1"></ul>
+      </div>
+     
+      <div>
+        <h2 class="text-xl font-semibold mb-2">Historique</h2>
+        <ul id="history-list" class="list-decimal pl-5 space-y-1"></ul>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html> 
